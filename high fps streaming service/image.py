@@ -17,9 +17,8 @@ def run():
     cap = cv2.VideoCapture(0)
     time.sleep(2)
 
-def get(FPS):
+def get():
     global image
-    time.sleep(1/FPS)
     ret, frame = cap.read()
     image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     return image, ret
@@ -67,5 +66,5 @@ def screenshot(prefomence_mode):
         img = np.array(sct.grab(monitor))
         img = cv2.cvtColor(img, cv2.COLOR_BGRA2RGB)
         img= cv2.resize(img, (1280, 720))
-        return img
+        return convert(img)
 

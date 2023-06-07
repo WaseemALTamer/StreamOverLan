@@ -2,12 +2,14 @@ import socket
 import image
 import sys
 import time
+import pygame
 
 server_address = ('192.168.1.173', 1234)
 
 fps = 0
 timer = time.time() + 1
 
+#image.run()
 
 while True:
     try:
@@ -21,8 +23,10 @@ while True:
                 timer = time.time() + 1
             try:
                 message = image.screenshot1(True)
+                #message = image.convert(image.get()[0])
                 sock.sendall(message)
                 fps += 1
+                #pygame.time.wait(5)
             except OSError as e:
                 print(f'An error occurred: {e}')
                 break

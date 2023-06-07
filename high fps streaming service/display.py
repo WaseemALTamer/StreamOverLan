@@ -1,10 +1,8 @@
+from PIL import Image
+from io import BytesIO
 import numpy as np
 import cv2
-import time
-import pygame
-import io
 import numpy as np
-
 
 
 def display(photo_data):
